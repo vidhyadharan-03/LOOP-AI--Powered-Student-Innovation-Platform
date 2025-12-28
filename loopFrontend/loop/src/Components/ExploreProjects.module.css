@@ -1,0 +1,86 @@
+.exploreContainer {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #0f172a, #020617);
+  color: #f8fafc;
+  padding: 8rem 2rem 4rem 2rem; /* Extra top padding to clear the fixed Navbar */
+}
+
+.header {
+  max-width: 1200px;
+  margin: 0 auto 4rem auto;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #f8fafc 0%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: #94a3b8;
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* THE GRID SYSTEM - Optimized for full width */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Empty State Styling */
+.noProjects {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 5rem;
+  background: rgba(15, 23, 42, 0.4);
+  border: 2px dashed rgba(34, 197, 94, 0.2);
+  border-radius: 2rem;
+}
+
+.noProjects h3 {
+  color: #10b981;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.noProjects p {
+  color: #64748b;
+}
+
+/* Loading Spinner Placeholder */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: #10b981;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .exploreContainer {
+    padding: 6rem 1rem 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+  
+  .projectsGrid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+}

@@ -1,0 +1,351 @@
+.nav {
+  background-color: #064e3b;
+  border-bottom: 1px solid #065f46;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: none;
+  padding: 0 2rem;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4.5rem;
+  width: 100%;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #4ade80, #22c55e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+/* Search Wrapper - NEW */
+.searchWrapper {
+  position: relative;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .searchWrapper {
+    display: block;
+  }
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #065f46;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+}
+
+.searchIcon {
+  width: 1rem;
+  height: 1rem;
+  color: #a7f3d0;
+}
+
+.searchInput {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 0.875rem;
+  width: 18rem;
+  color: white;
+}
+
+.searchInput::placeholder {
+  color: #a7f3d0;
+}
+
+/* Search Results Dropdown - NEW */
+.searchResults {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  background: #065f46;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.searchResultItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1.25rem;
+  cursor: pointer;
+  border-bottom: 1px solid #064e3b;
+  transition: background 0.2s;
+}
+
+.searchResultItem:hover {
+  background: #064e3b;
+}
+
+.searchResultItem:last-child {
+  border-bottom: none;
+}
+
+.searchResultContent {
+  flex: 1;
+}
+
+.searchResultTitle {
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.searchResultSubtitle {
+  color: #a7f3d0;
+  font-size: 0.75rem;
+}
+
+.searchResultBadge {
+  background: #10b981;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.noResults {
+  padding: 1.5rem;
+  text-align: center;
+  color: #a7f3d0;
+  font-size: 0.875rem;
+}
+
+/* Right Section */
+.rightSection {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .rightSection {
+    display: flex;
+  }
+}
+
+.notificationButton {
+  position: relative;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  color: #a7f3d0;
+  transition: all 0.2s;
+}
+
+.notificationButton:hover {
+  background: #065f46;
+  color: white;
+}
+
+.notificationBadge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  background: #10b981;
+  color: white;
+  font-size: 0.7rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #064e3b;
+}
+
+.createButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: linear-gradient(to right, #10b981, #059669);
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+  transition: all 0.3s;
+}
+
+.createButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
+}
+
+/* Profile Wrapper - NEW */
+.profileWrapper {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 1px solid #065f46;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 0.5rem;
+  transition: background 0.2s;
+}
+
+.userSection:hover {
+  background: rgba(6, 95, 70, 0.5);
+}
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  border: 2px solid #059669;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.userEmail {
+  font-size: 0.75rem;
+  color: #a7f3d0;
+}
+
+/* Profile Dropdown - NEW */
+.profileDropdown {
+  position: absolute;
+  top: calc(100% + 1rem);
+  right: 0;
+  background: #065f46;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
+  overflow: hidden;
+  z-index: 1000;
+  animation: slideDown 0.2s ease-out;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  background: transparent;
+  border: none;
+  color: white;
+  fontSize: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: left;
+}
+
+.dropdownItem:hover {
+  background: #064e3b;
+}
+
+.dropdownItemDanger {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  background: transparent;
+  border: none;
+  color: #fca5a5;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: left;
+}
+
+.dropdownItemDanger:hover {
+  background: rgba(248, 113, 113, 0.1);
+}
+
+.dropdownDivider {
+  height: 1px;
+  background: #064e3b;
+  margin: 0.25rem 0;
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .mobileMenuButton {
+    display: none;
+  }
+}
